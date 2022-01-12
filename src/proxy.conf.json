@@ -1,0 +1,6 @@
+{
+    "/api": {
+    "target": "https://lorekdev.pl/polls/api/createacc/",
+    "secure": false
+    }
+    }   

@@ -1,0 +1,16 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" method="post">
+    
+
+   
+    <div class="mb-3">
+      <label for="username" class="form-label">Login</label>
+      <input type="username" name="username" ngModel required #username="ngModel" class="form-control" id="Login" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Hasło</label>
+      <input type="password" name="password"ngModel required #password="ngModel" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Zaloguj</button>
+
+  </form>
