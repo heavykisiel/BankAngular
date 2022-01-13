@@ -2,19 +2,27 @@
 <body>
     <div ngClass="auth-wrapper">
         <div ngClass="auth-inner">
-            <p>Witaj, username</p>
+            <p>Witaj, {{username}}</p>
         </div>
     </div>
-    <div ngClass="eo">
-        <div class="d-grid gap-2 d-md-block">
-            <div>
-                <button class="btn btn-primary" type="button">Przelej hajs</button>
-            </div>
-            <div>
-                <button class="btn btn-primary" type="button">Przewalutuj</button>
-            </div>
-          </div>
+    <div ngClass="auth-wrapper eo">
+        <div ngClass="auth-inner eo">
+            <div class="d-grid gap-2 d-md-block">
+                <div class="buttonwrapper">
+                    <div class="kwotaVal">Twój stan konta: {{hajs}} {{Currency}}</div>
+                </div>
+                <br>
+                <div class="buttonwrapper">
+                    <button class="btn btn-primary " type="button">Przelej hajs</button>
+                </div>
+                <br>
+                <div class="buttonwrapper"  >
+                    <button class="btn btn-primary" type="button">Przewalutuj</button>
+                </div>
+              </div>
+        </div>
     </div>
+       
 
     
 </body>

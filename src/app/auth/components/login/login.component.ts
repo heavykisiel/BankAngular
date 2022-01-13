@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
     );
     
     console.log(f.value);
-    console.log(f.valid);
    
     
   }

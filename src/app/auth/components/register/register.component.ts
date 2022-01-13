@@ -26,7 +26,6 @@ export class RegisterComponent implements OnInit {
     );
     
     console.log(f.value);
-    console.log(f.valid);
    
     
    

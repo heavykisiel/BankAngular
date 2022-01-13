@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  hajs: Number = 0;
+  Currency: string = '';
+  username:string = '';
   constructor() { }
 
   ngOnInit(): void {
+    this.hajs =12.12;
+    this.Currency ='PLN';
+    this.username = 'StaryZbyszka';
   }
 
 }

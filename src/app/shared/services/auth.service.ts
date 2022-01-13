@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
+  i = 0;
 
   authUrl = "https://lorekdev.pl/polls/api/account/";
   pepege = "https://lorekdev.pl/polls/api/createacc/";
