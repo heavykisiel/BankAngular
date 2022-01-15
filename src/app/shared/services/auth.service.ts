@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { FormGroup } from '@angular/forms';
 
 
 
@@ -9,7 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AuthService {
   i = 0;
 
-  authUrl = "https://lorekdev.pl/api/bankNumbers";
+  authUrl = "https://lorekdev.pl/api/createUser/";
   loginLink = "https://lorekdev.pl/api/login/";
   tokenGetLink = "https://lorekdev.pl/api/api-token-auth/";
   BankAccGetLink = "https://lorekdev.pl/api/bankNumbers/";
@@ -18,6 +19,31 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
  
+  passwordMatchValidator(password: string, confirmPassword: string) {
+    return (formGroup: FormGroup) => {
+      const passwordControl = formGroup.controls[password];
+      const confirmPasswordControl = formGroup.controls[confirmPassword];
+
+      if (!passwordControl || !confirmPasswordControl) {
+        return null;
+      }
+
+      if (
+        confirmPasswordControl.errors &&
+        !confirmPasswordControl.errors['passwordMismatch']
+      ) {
+        return null;
+      }
+
+      if (passwordControl.value !== confirmPasswordControl.value) {
+        confirmPasswordControl.setErrors({ passwordMismatch: true });
+          return true;
+      } else {
+        confirmPasswordControl.setErrors(null);
+          return null;
+      }
+    };
+  }
 
   configUrl = 'assets/config.json';
   register(model: any){

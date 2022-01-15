@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     
-    
+    console.log(localStorage.getItem('username'));
     if (localStorage.getItem('username') === '' || localStorage.getItem('username') === null || localStorage.getItem('username') == null) {
       this.router.navigate(['login']);
     }
@@ -32,11 +32,6 @@ export class MainComponent implements OnInit {
       var jsoned:Array<any> = JSON.parse(this.accounts);
       console.log(jsoned);
       jsoned.forEach(element => {
-        console.log(element['fields']['accName']);
-        console.log(element['fields']['accNumber']);
-        console.log(element['fields']['balance']);
-        console.log(element['fields']['waluts']);
-        
         this.aaa.push(element['fields']['accName'] + "   "+ element['fields']['accNumber'], element['fields']['balance'] +"  "+ element['fields']['waluts'] );
       });
       console.log(this.aaa);
