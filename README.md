@@ -11,6 +11,8 @@ https://github.com/heavykisiel/BankAngular (Angular)
 https://github.com/Szparaxd/DJangoBank (Django)  
 https://github.com/fmpara/bank (React)  
 
+##Rozszerzona wersja dokumentacji wkrótce będzie dostępna  
+
 # WebProjectZal
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
