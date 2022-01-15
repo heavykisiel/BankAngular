@@ -11,7 +11,7 @@ https://github.com/heavykisiel/BankAngular (Angular)
 https://github.com/Szparaxd/DJangoBank (Django)  
 https://github.com/fmpara/bank (React)  
 
-##Rozszerzona wersja dokumentacji wkrótce będzie dostępna  
+## Rozszerzona wersja dokumentacji wkrótce będzie dostępna  
 
 # WebProjectZal
 
