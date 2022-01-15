@@ -1,9 +1,9 @@
 # Projekt Frontendu banku w Angularze
 
 #Wykonanie :
-Nikodem Luto,
-Filip Mielnik 
-Adam Lorek
+Nikodem Luto  
+Filip Mielnik   
+Adam Lorek   
 
 ## Zaprzyjaźnione repozytoria:
 Na projekt składają sie 3 projekty:
