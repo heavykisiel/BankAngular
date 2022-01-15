@@ -5,8 +5,8 @@ Nikodem Luto
 Filip Mielnik   
 Adam Lorek   
 
-## Zaprzyjaźnione repozytoria:
-Na projekt składają sie 3 projekty:
+## Zaprzyjaźnione repozytoria:  
+Na projekt składają sie 3 projekty:  
 https://github.com/heavykisiel/BankAngular (Angular)  
 https://github.com/Szparaxd/DJangoBank (Django)  
 https://github.com/fmpara/bank (React)  
