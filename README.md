@@ -1,15 +1,15 @@
 # Projekt Frontendu banku w Angularze
 
-#Wykonanie :
+#Wykonanie :  
 Nikodem Luto  
 Filip Mielnik   
 Adam Lorek   
 
 ## Zaprzyjaźnione repozytoria:
 Na projekt składają sie 3 projekty:
-https://github.com/heavykisiel/BankAngular (Angular)
-https://github.com/Szparaxd/DJangoBank (Django)
-https://github.com/fmpara/bank (React)
+https://github.com/heavykisiel/BankAngular (Angular)  
+https://github.com/Szparaxd/DJangoBank (Django)  
+https://github.com/fmpara/bank (React)  
 
 # WebProjectZal
 
