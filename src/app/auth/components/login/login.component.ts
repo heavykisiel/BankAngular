@@ -3,12 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { HttpHeaders } from '@angular/common/http';
-import * as jwt from 'jsonwebtoken';
-import { Subscription } from 'rxjs';
-import { Token } from '@angular/compiler';
-import { firstValueFrom} from 'rxjs';
 
-
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +13,7 @@ import { firstValueFrom} from 'rxjs';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +21,7 @@ export class LoginComponent implements OnInit {
   async onSubmit(f: NgForm){
     // http://lorek.dev/api/api-token-auth/?username=admin&password=admin <-- mj link
     // http://lorek.dev/api/api-token-auth/?username=admin&password=admin <- twój link
-    
+    var correctLogin = true
     var a1 = f.value.username;
     var a2 = f.value.password;
     const headers= new HttpHeaders()
@@ -38,46 +34,62 @@ export class LoginComponent implements OnInit {
     formData.append('username', a1);
     formData.append('password', a2);
     var token: string ='';
-    var as = this.authService.login(formData).subscribe(
+   this.authService.login(formData).subscribe(
        x => {
-        token = x.toString();
-        console.log(token);
+        console.log('udało się');
+        correctLogin = true
        },
-       err => console.error(err),
+       err =>{
+        console.error('Wystąpił Błąd logowania spróbuj ponownie');
+        console.log(err);
+        correctLogin = false;
+
+       } ,
      );
+     if(correctLogin){
 
      
      var tokenAchieved = await this.authService.login(formData).toPromise();
-
-     console.log(tokenAchieved);
-     tokenAchieved = tokenAchieved as string
-     var tokenString: string = tokenAchieved.toString();
+     var bufferforJson = JSON.stringify(tokenAchieved);
+     var correctJSONrespLogin = JSON.parse(bufferforJson);
+     
+     console.log(correctJSONrespLogin[0]);
+     console.log(correctJSONrespLogin[1]);
+     var username = correctJSONrespLogin[0]['fields']['username'];
+     var resposeToken = correctJSONrespLogin[1]['pk'];
+     var firstName = correctJSONrespLogin[0]['fields']['first_name'];
+     var firstName = correctJSONrespLogin[0]['fields']['last_name'];
+     localStorage.setItem('token',resposeToken);
+     localStorage.setItem('username',username);
+     localStorage.setItem('first_name',firstName);
+     localStorage.setItem('last_name',firstName);
+    
+     
      var formDataToken = new FormData();
-     console.log(tokenString.toString())
-     formDataToken.append('token', tokenString.toString());
+     formDataToken.append('token', resposeToken.toString());
      console.log(formDataToken);
     
     this.authService.UserBankAcc(formDataToken).subscribe(
       x => console.log(x),
       err => console.error(err),
     );
-    var BankAccNumer:any = await this.authService.UserBankAcc(formDataToken).toPromise();
-    console.log(BankAccNumer);
-    var bankacc: string=  BankAccNumer["NumbersAccBank"];
-    //bankaccnumer console.log(bankacc[0])
-    var username: string=  BankAccNumer["username"];
-    var user_id: string=  BankAccNumer["id"];
-    console.log(username,user_id)
+     var BankAccNumer:any = await this.authService.UserBankAcc(formDataToken).toPromise();
+     var bufferforJsonAccounts = JSON.stringify(BankAccNumer);
+     var correctJSONrespAccounts = JSON.parse(bufferforJsonAccounts);
+     localStorage.setItem('accounts',JSON.stringify(correctJSONrespAccounts));
+     this.router.navigate(['logged']);
+    }
+    else{
+      console.log('tryagain')
 
 
-    var formDataInfo = new FormData();
-    formDataInfo.append('bankNumber', bankacc);
-    formDataInfo.append('token', tokenString);
-    
-    this.authService.infoUser(formDataInfo).subscribe(
-      x => console.log(x),
-      err => console.error(err),
-    );
+    }
+    // console.log(BankAccNumer);
+    // var bankacc: string=  BankAccNumer["NumbersAccBank"];
+    // //bankaccnumer console.log(bankacc[0])
+    // var username: string=  BankAccNumer["username"];
+    // var user_id: string=  BankAccNumer["id"];
+    // console.log(username,user_id)
    
     console.log(f.value);
    
