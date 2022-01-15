@@ -3,14 +3,19 @@ import { CommonModule } from '@angular/common';
 import { ColumnOneComponent } from './layouts/column-one/column-one.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { ColumnTwoComponent } from './layouts/column-two/column-two.component'; 
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
     ColumnOneComponent,
-    HeaderComponent
+    HeaderComponent,
+    ColumnTwoComponent,
+    FooterComponent
+  
 
   ],
   imports: [
@@ -20,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     
   ],
   exports: [
-    ColumnOneComponent
+    ColumnOneComponent,
+    ColumnTwoComponent
    
   ]
 })

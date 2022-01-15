@@ -1,15 +1,62 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" method="post">
+<form #f="ngForm" class="form-control" (ngSubmit)="onSubmit(f)" method="post">
     
 
    
     <div class="mb-3">
       <label for="username" class="form-label">Login</label>
-      <input type="username" name="username" ngModel required #username="ngModel" class="form-control" id="Login" aria-describedby="emailHelp">
+      <input 
+        type="username" 
+        name="username" 
+        ngModel required 
+        #username="ngModel" 
+        class="form-control" 
+        id="Login" 
+        aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text"></div>
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Hasło</label>
-      <input type="password" name="password"ngModel required #password="ngModel" class="form-control" id="exampleInputPassword1">
+      <input 
+        type="password" 
+        name="password" 
+        ngModel 
+        required 
+        #password="ngModel" 
+        class="form-control" 
+        id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="FirstName" class="form-label">Imię</label>
+      <input 
+        type="FirstName" 
+        name="FirstName" 
+        ngModel 
+        required 
+        #FirstName="ngModel" 
+        class="form-control" 
+        id="FirstName">
+    </div>
+    <div class="mb-3">
+      <label for="username" class="form-label">Nazwisko</label>
+      <input 
+        type="LastName" 
+        name="LastName" 
+        ngModel required 
+        #LastName="ngModel" 
+        class="form-control" 
+        id="LastName">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input 
+        type="email" 
+        name="email" 
+        ngModel 
+        required 
+        #Email="ngModel" 
+        email="true" 
+        class="form-control" 
+        id="Email">
     </div>
     <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Zaloguj</button>
 

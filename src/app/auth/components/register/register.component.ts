@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { of } from 'rxjs';
 
@@ -11,14 +11,19 @@ import { of } from 'rxjs';
 export class RegisterComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
+  form : FormGroup = new FormGroup({
+  email: new FormControl(),
+  password: new FormControl()
+})
 
-
+  
   ngOnInit(): void {
   }
   static readonly myObservable = of(1, 2, 3);
   
   onSubmit(f: NgForm){
 
+    
     
     this.authService.register(f.value).subscribe(
       x => console.log('Observer got a next value: ' + x),
