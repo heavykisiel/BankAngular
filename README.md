@@ -1,6 +1,6 @@
 # Projekt Frontendu banku w Angularze
 
-#Wykonanie :  
+# Wykonanie :  
 Nikodem Luto  
 Filip Mielnik   
 Adam Lorek   
