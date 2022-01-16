@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
     var a3 = f.value.FirstName;
     var a4 = f.value.LastName;
     var a5 = f.value.email;
+    //narazie a3,a4,a5 nie są potrzebne #api
     var formData = new FormData();
     console.log(formData)
     formData.append('username', a1);

@@ -7,12 +7,7 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
   styleUrls: ['./main.component.sass']
 })
 export class MainComponent implements OnInit {
-
-
-
-
-  hajs: Number = 0;
-  Currency: string = '';
+  
   username: string = ''
   accounts: any
   aaa:Array<string> = []
@@ -27,21 +22,15 @@ export class MainComponent implements OnInit {
     else {
       this.username = localStorage.getItem('username') as string;
     }
-    if(localStorage.getItem('accounts') !== '' || localStorage.getItem('accounts') !== null || localStorage.getItem('accounts') != null) {
+    if(localStorage.getItem('accounts') !== '' || localStorage.getItem('accounts') !== null || localStorage.getItem('accounts') != null || localStorage.getItem('accounts') != '') {
       this.accounts = localStorage.getItem('accounts');
       var jsoned:Array<any> = JSON.parse(this.accounts);
-      console.log(jsoned);
+      if(jsoned !== null){
       jsoned.forEach(element => {
-        this.aaa.push(element['fields']['accName'] + "   "+ element['fields']['accNumber'], element['fields']['balance'] +"  "+ element['fields']['waluts'] );
+        this.aaa.push(element['fields']['accName'] + "   "+ element['fields']['accNumber'],element['fields']['balance'] +"  "+ element['fields']['waluts'] );
       });
-      console.log(this.aaa);
     }
-
-
-
-    this.hajs = 12.12;
-    this.Currency = 'PLN';
-
+  }
   }
 
 }

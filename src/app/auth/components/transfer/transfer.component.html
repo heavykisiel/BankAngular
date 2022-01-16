@@ -1,14 +1,35 @@
-
 <body>
-    <div ngClass="auth-wrapper">
-        <div ngClass="auth-inner">
-            <p>Witaj w kreatorze przelewów, work in progress zaraz bedzie działać tylko daj mi troche czasu ok?</p>
+   
+    <div ngClass="auth-wrapper eo">
+        <div ngClass="auth-inner eo">
+            
+           
+            <p>
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)" method="post">
+    
+                    <p>Wybierz Konto z którego chcesz skorzystać:</p>
+                    <select name="kontoN" ngModel required #kontoN="ngModel">
+                        <option  *ngFor="let item of accNameNumber "   ngValue="{{statesSelect}}" >{{item}}</option>
+                    </select>
+                    <div class="mb-3">
+                      <label for="kwota" class="form-label">Podaj kwotę:</label>
+                      <input type="kwota" name="kwota" ngModel required #kwota="ngModel" class="form-control" id="kwota">
+                    </div>
+                    <div class="mb-3">
+                      <label for="title" class="form-label">Podaj tytuł przelewu:</label>
+                      <input type="title" name="title"ngModel required #title="ngModel" class="form-control" id="etitle">
+                    </div>
+                    <div class="mb-3">
+                        <label for="KontoO" class="form-label">Podaj number konta odbiorcy:</label>
+                        <input type="KontoO" name="KontoO"ngModel required #KontoO="ngModel" class="form-control" id="KontoO">
+                      </div>
+                    <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Zaloguj</button>
+                
+                  </form>
+            
         </div>
     </div>
-   
        
 
     
 </body>
-
-

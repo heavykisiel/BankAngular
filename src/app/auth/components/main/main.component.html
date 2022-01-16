@@ -1,23 +1,17 @@
 
 <body>
-    <div ngClass="auth-wrapper">
-        <div ngClass="auth-inner">
-            <p>Witaj, {{username}}</p>
-        </div>
-    </div>
     <div ngClass="auth-wrapper eo">
         <div ngClass="auth-inner eo">
+            <p>Witaj, <b>{{username}}</b></p>
             <div class="d-grid gap-2 d-md-block">
                 
-                <li *ngFor="let item of aaa ">{{item}}</li>
-
-              
-                <div class="buttonwrapper">
-                <a class="nav-link active" aria-current="page" [routerLink]="['transfer']">
-                    <button class="btn btn-primary " type="button">Prześlij przelew</button>
-                </a>
-                </div>
-                <br>
+                <li class="acc" *ngFor="let item of aaa ">{{item}}</li>
+                    <div class="buttonwrapper">
+                        <a class="nav-link active" aria-current="page" [routerLink]="['transfer']">
+                            <button class="btn btn-primary " type="button">Prześlij przelew</button>
+                        </a>
+                    </div>
+                
                 <!-- <div class="buttonwrapper">
                     <a class="nav-link active" aria-current="page" [routerLink]="['transfer']">
                     <button class="btn btn-primary" type="button">Przewalutuj</button>

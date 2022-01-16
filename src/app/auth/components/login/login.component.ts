@@ -43,12 +43,9 @@ export class LoginComponent implements OnInit {
         console.error('Wystąpił Błąd logowania spróbuj ponownie');
         console.log(err);
         correctLogin = false;
-
        } ,
      );
      if(correctLogin){
-
-     
      var tokenAchieved = await this.authService.login(formData).toPromise();
      var bufferforJson = JSON.stringify(tokenAchieved);
      var correctJSONrespLogin = JSON.parse(bufferforJson);
@@ -77,12 +74,11 @@ export class LoginComponent implements OnInit {
      var bufferforJsonAccounts = JSON.stringify(BankAccNumer);
      var correctJSONrespAccounts = JSON.parse(bufferforJsonAccounts);
      localStorage.setItem('accounts',JSON.stringify(correctJSONrespAccounts));
-     this.router.navigate(['logged']);
+     window.location.href = '../logged'
+     //this.router.navigate(['logged']); musi tak działać bez routingu
     }
     else{
       console.log('tryagain')
-
-
     }
     // console.log(BankAccNumer);
     // var bankacc: string=  BankAccNumer["NumbersAccBank"];

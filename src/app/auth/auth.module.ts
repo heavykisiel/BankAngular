@@ -8,6 +8,7 @@ import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
 import { IndexComponent } from './components/index/index.component';
 import { TransferComponent } from './components/transfer/transfer.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { TransferComponent } from './components/transfer/transfer.component';
     MainComponent,
     RegisterComponent,
     IndexComponent,
-    TransferComponent
+    TransferComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,
