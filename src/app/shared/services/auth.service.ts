@@ -36,7 +36,7 @@ export class AuthService {
     return this.http.post(this.BankAccGetLink, model)
   }
   przelew(model: any){
-    return this.http.post(this.BankAccGetLink, model)
+    return this.http.post(this.przelewLink, model)
   }
 
   

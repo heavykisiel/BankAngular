@@ -35,6 +35,7 @@ export class TransferComponent implements OnInit {
       var a2 = f.value.kwota;
       var a3 = f.value.title;
       var a4 = f.value.KontoO;
+      var a5 = localStorage.getItem('token') as string
       console.log(a1,a2,a3,a4);
       var formData = new FormData();
       console.log(formData)
@@ -54,6 +55,8 @@ export class TransferComponent implements OnInit {
           correctPrzelew = false;
          } ,
        );
+
+       window.location.href = '../logged'
      
   }
 }

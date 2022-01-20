@@ -11,7 +11,6 @@ import { of } from 'rxjs';
 export class RegisterComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
-
   
   ngOnInit(): void {
   }
@@ -30,11 +29,16 @@ export class RegisterComponent implements OnInit {
     console.log(formData)
     formData.append('username', a1);
     formData.append('password', a2);
-    
+ 
     
     this.authService.register(formData).subscribe(
-      x => console.log('Observer got a next value: ' + x),
-      err => console.error(err),
+      x => {
+        console.log('Observer got a next value: ' + x)
+      },
+      err => {
+        console.error(err)
+       
+      },
     );
     
     console.log(f.value);
