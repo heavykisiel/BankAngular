@@ -15,7 +15,7 @@ export class AuthService {
   #loginLink = "https://lorekdev.pl/api/login/";
   loginLink = "http://127.0.0.1:8000/api/login";
   BankAccGetLink = "http://127.0.0.1:8000/api/bankNumbers/";
-  infoBankAcc = "https://lorekdev.pl/api/infoBankAcc/";
+  infoBankAccLink = "http://127.0.0.1:8000/api/infoBankAcc/";
   historyTransfersLink = "http://127.0.0.1:8000/api/history";
 
   przelewLink = "http://127.0.0.1:8000/api/transfer/";
@@ -30,9 +30,6 @@ export class AuthService {
   login(model: any) {
     return this.http.post(this.loginLink, model)
   }
-  infoUser(model: any){
-    return this.http.post(this.infoBankAcc, model)
-  }
   UserBankAcc(model: any){
     return this.http.post(this.BankAccGetLink, model)
   }
@@ -42,6 +39,11 @@ export class AuthService {
   history(model: any){
     return this.http.post(this.historyTransfersLink, model)
   }
+  userInfo(model: any){
+    return this.http.post(this.infoBankAccLink, model)
+
+  }
+
   
 
   

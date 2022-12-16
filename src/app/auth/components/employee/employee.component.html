@@ -1,1 +1,14 @@
-<p>employee works!</p>
+
+
+<div ngClass="auth-wrapper eo">
+    <div ngClass="auth-inner eo">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" method="post">
+             <input type="login" name="login" ngModel required #login="ngModel" class="form-control" id="Login" aria-describedby="emailHelp">
+        <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Pokaż dane</button>
+        
+    </form>
+    <li class="acc" *ngFor="let transaction of userInfoOutput ">
+        {{transaction}}
+    </li>
+    </div>
+</div>
