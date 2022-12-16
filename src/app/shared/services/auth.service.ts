@@ -11,13 +11,14 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  RegisterLink = "https://lorekdev.pl/api/createUser/";
-  loginLink = "https://lorekdev.pl/api/login/";
-  
-  BankAccGetLink = "https://lorekdev.pl/api/bankNumbers/";
+  RegisterLink = "http://127.0.0.1:8000/api/register";
+  #loginLink = "https://lorekdev.pl/api/login/";
+  loginLink = "http://127.0.0.1:8000/api/login";
+  BankAccGetLink = "http://127.0.0.1:8000/api/bankNumbers/";
   infoBankAcc = "https://lorekdev.pl/api/infoBankAcc/";
+  historyTransfersLink = "http://127.0.0.1:8000/api/history";
 
-  przelewLink = "https://lorekdev.pl/api/przelew/";
+  przelewLink = "http://127.0.0.1:8000/api/transfer/";
 
   constructor(private http: HttpClient) { }
  
@@ -38,6 +39,10 @@ export class AuthService {
   przelew(model: any){
     return this.http.post(this.przelewLink, model)
   }
+  history(model: any){
+    return this.http.post(this.historyTransfersLink, model)
+  }
+  
 
   
 }

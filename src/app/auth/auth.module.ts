@@ -9,6 +9,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { IndexComponent } from './components/index/index.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { HistoryComponent } from './components/history/history.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { LogoutComponent } from './components/logout/logout.component';
     RegisterComponent,
     IndexComponent,
     TransferComponent,
-    LogoutComponent
+    LogoutComponent,
+    HistoryComponent,
+    EmployeeComponent,
+    AdminComponent
   ],
   imports: [
     CommonModule,

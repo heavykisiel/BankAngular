@@ -1,0 +1,16 @@
+
+
+<div ngClass="auth-wrapper eo">
+    <div ngClass="auth-inner eo">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" method="post">
+        <select name="kontoN" ngModel required #kontoN="ngModel">
+            <option  *ngFor="let item of statesSelect " ngFor="let acc of accNameNumber "  >{{item}}</option>
+        </select>
+        <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Pokaż</button>
+        
+    </form>
+    <li class="acc" *ngFor="let transaction of listofTransaction ">
+        {{transaction}}
+    </li>
+    </div>
+</div>

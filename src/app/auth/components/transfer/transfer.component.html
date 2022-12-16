@@ -2,8 +2,6 @@
    
     <div ngClass="auth-wrapper eo">
         <div ngClass="auth-inner eo">
-            
-           
             <p>
                 <form #f="ngForm" (ngSubmit)="onSubmit(f)" method="post">
     
@@ -23,7 +21,7 @@
                         <label for="KontoO" class="form-label">Podaj number konta odbiorcy:</label>
                         <input type="KontoO" name="KontoO"ngModel required #KontoO="ngModel" class="form-control" id="KontoO">
                       </div>
-                    <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Zaloguj</button>
+                    <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Przelej</button>
                 
                   </form>
             

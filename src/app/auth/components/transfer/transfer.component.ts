@@ -23,8 +23,8 @@ export class TransferComponent implements OnInit {
     var jsoned:Array<any> = JSON.parse(this.accounts);
     if(jsoned !== null){
       jsoned.forEach(element => {
-        this.statesSelect.push(element['fields']['accNumber'])
-        this.accNameNumber.push(element['fields']['accNumber'], element['fields']['accName'], element['fields']['balance'],element['fields']['waluts']);
+        this.statesSelect.push(element['accNumber'])
+        this.accNameNumber.push(element['accNumber'], element['accName'], element['balance'],element['currency']);
         console.log(this.accNameNumber);
       });
   }
@@ -39,18 +39,20 @@ export class TransferComponent implements OnInit {
       console.log(a1,a2,a3,a4);
       var formData = new FormData();
       console.log(formData)
-      formData.append('fromBank', a1);
+      formData.append('from', a1);
       formData.append('amount', a2);
       formData.append('description', a3);
-      formData.append('toBank', a4);
-      var token: string ='';
+      formData.append('to', a4);
+      formData.append('token', a5)
      this.authService.przelew(formData).subscribe(
        (         x: any) => {
           console.log('udało się');
           correctPrzelew = true
+          console.log(x)
+          localStorage.setItem('newbalance', x)
          },
        (         err: any) =>{
-          console.error('Wystąpił Błąd logowania spróbuj ponownie');
+          console.error('Wystąpił Błąd przelewu spróbuj ponownie');
           console.log(err);
           correctPrzelew = false;
          } ,
