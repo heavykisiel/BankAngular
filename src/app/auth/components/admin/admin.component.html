@@ -1,1 +1,54 @@
-<p>admin works!</p>
+
+<body>
+    
+    <div ngClass="auth-wrapper eo">
+        <div ngClass="auth-inner eo">
+            
+                <table align="center">
+                    <th>id </th> <th> Login</th><th>Imię</th><th>Nazwisko</th>
+                    <tr  *ngFor="let item of listofUsers"   >
+                        
+                        <td>{{item.id|json}}</td>
+                        <td>{{item.name|json}}</td> 
+                        <td>{{item.first_name|json}}</td> 
+                        <td>{{item.last_name|json}}</td> 
+                        <td><button  (click)="onSubmit(item)" class="btn btn-primary">Zmień</button></td>
+                    </tr>
+                </table>
+                
+                <br>
+                
+           
+                <table >
+                    <tr *ngFor="let d of UserArray">
+                        <td>Panel użytkownika:</td>
+                        <td>{{d.first_name}}   {{d.last_name}}</td>
+                    </tr>
+                    <tr *ngFor="let d of UserArray">
+                        
+                    <td>Nowe imię:</td>
+                    <td><input [(ngModel)]='searchValue' type="text" [value]='searchValue' ></td>
+                    <td><button   (click)="onSubmit2(searchValue)"  class="btn btn-primary">Zapisz</button></td>
+                    </tr> 
+               
+                    <tr *ngFor="let d of UserArray">
+                    <td>Nowe nazwisko:</td>
+                    <td><input [(ngModel)]='searchValue1' type="text" [value]='searchValue1' ></td>
+                    <td><button   (click)="onSubmit3(searchValue1)"  class="btn btn-primary">Zapisz</button></td>
+                    </tr> 
+               
+                    <tr *ngFor="let d of UserArray">
+                    <td>Nowe hasło:</td>
+                    <td><input [(ngModel)]='searchValue2' type="text" [value]='searchValue2' ></td>
+                    <td><button   (click)="onSubmit4(searchValue2)"  class="btn btn-primary">Zapisz</button></td>
+                    </tr> 
+                </table>
+
+            
+              
+        </div>
+    </div>
+       
+
+    
+</body>

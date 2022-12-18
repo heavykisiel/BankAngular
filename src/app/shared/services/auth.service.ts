@@ -17,6 +17,8 @@ export class AuthService {
   BankAccGetLink = "http://127.0.0.1:8000/api/bankNumbers/";
   infoBankAccLink = "http://127.0.0.1:8000/api/infoBankAcc/";
   historyTransfersLink = "http://127.0.0.1:8000/api/history";
+  changedLink = "http://127.0.0.1:8000/api/change/";
+  UserListLink = "http://127.0.0.1:8000/api/userList";
 
   przelewLink = "http://127.0.0.1:8000/api/transfer/";
 
@@ -41,10 +43,13 @@ export class AuthService {
   }
   userInfo(model: any){
     return this.http.post(this.infoBankAccLink, model)
-
   }
-
-  
+  UserList(model: any){
+    return this.http.post(this.UserListLink, model)
+  }
+  changeLink(model:any){
+    return this.http.post(this.changedLink, model)
+  }  
 
   
 }

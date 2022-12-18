@@ -15,6 +15,8 @@ export class TransferComponent implements OnInit {
 
   statesSelect:Array<string> =[
   ]
+  statesSelectDisplay:Array<string> =[
+  ]
   accounts:string = ''
   accNameNumber:Array<string> = []
   kontoN:string ='';
@@ -23,7 +25,7 @@ export class TransferComponent implements OnInit {
     var jsoned:Array<any> = JSON.parse(this.accounts);
     if(jsoned !== null){
       jsoned.forEach(element => {
-        this.statesSelect.push(element['accNumber'])
+        this.statesSelect.push(element['accNumber'] + "  " +element['currency'])
         this.accNameNumber.push(element['accNumber'], element['accName'], element['balance'],element['currency']);
         console.log(this.accNameNumber);
       });
@@ -31,7 +33,7 @@ export class TransferComponent implements OnInit {
   }
    onSubmit(f: NgForm){
       var correctPrzelew = true
-      var a1 = f.value.kontoN;
+      var a1 = f.value.kontoN.split(" ")[0];
       var a2 = f.value.kwota;
       var a3 = f.value.title;
       var a4 = f.value.KontoO;
@@ -58,7 +60,7 @@ export class TransferComponent implements OnInit {
          } ,
        );
 
-       window.location.href = '../logged'
+       //window.location.href = '../logged'
      
   }
 }
