@@ -13,7 +13,7 @@
             <a *ngIf="!logoutAvailable"class="nav-link active" aria-current="page" [routerLink]="['register']">Rejestracja</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="['logged']">Main</a>
+            <a *ngIf="logoutAvailable"class="nav-link active" aria-current="page" [routerLink]="['logged']">Main</a>
           </li>
           <li class="nav-item">
             <a *ngIf="logoutAvailable" class="nav-link active" aria-current="page" [routerLink]="['logout']">Wyloguj</a>

@@ -60,7 +60,7 @@ export class TransferComponent implements OnInit {
          } ,
        );
 
-       //window.location.href = '../logged'
+       window.location.href = '../logged'
      
   }
 }

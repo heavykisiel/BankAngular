@@ -60,10 +60,10 @@ export class HistoryComponent implements OnInit {
           Array.from(jsoned).forEach(element => {
           console.log(element)
           if (element['from_bank_id'] != f.value.kontoN){
-            this.listofTransaction.push("from: " + element['from_bank_id'] + "  to :  "+ element['to_bank_id'],"+"+element['amount'] +"  "+ element['currency']);
+            this.listofTransaction.push("from: " + element['from_bank_id'] + "  to :  "+ element['to_bank_id'],"+"+element['amount'] +"  "+ element['currency'] + " " + element['description']);
           }
           else{
-            this.listofTransaction.push("from: " + element['from_bank_id'] + "  to :  "+ element['to_bank_id'],"-"+element['amount'] +"  "+ element['currency']);
+            this.listofTransaction.push("from: " + element['from_bank_id'] + "  to :  "+ element['to_bank_id'],"-"+element['amount'] +"  "+ element['currency'] + " " + element['description']);
           }
           
         });

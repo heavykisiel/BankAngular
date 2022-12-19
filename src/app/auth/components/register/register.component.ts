@@ -29,6 +29,9 @@ export class RegisterComponent implements OnInit {
     console.log(formData)
     formData.append('username', a1);
     formData.append('password', a2);
+    formData.append('first_name', a3);
+    formData.append('last_name', a4);
+    formData.append('email', a5)
  
     
     this.authService.register(formData).subscribe(
@@ -42,7 +45,7 @@ export class RegisterComponent implements OnInit {
     );
     
     console.log(f.value);
-   
+    
     
    
     
